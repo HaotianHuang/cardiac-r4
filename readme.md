@@ -1,4 +1,4 @@
-## ⚠️ This project is deprecated and is not actively maintained!
+## Edit: I changed it to work for R4 SMART launcher and made it a MVP so that it's easy for you to understand how a fhir app like this can work. 
 
 # About #
 A port of the [Cardiac Risk Visualization SMART Application](https://github.com/smart-classic/smart_sample_apps/tree/master/static/framework/cardio_risk_viz
