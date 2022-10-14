@@ -49,8 +49,10 @@
 
       return Promise.all([ patientQuery, labsQuery ]).then(function(data) {
         
+        
+        console.log(data[0]);
         var patient = data[0];
-
+      
         if (!patient.birthDate) {
           alert("Unknown patient.birthDate");
           throw new Error("Unknown patient.birthDate");
@@ -63,6 +65,7 @@
 
         // The labs result is an array of (zero or more) pages. Convert it to
         // flat array of resources.
+        // console.log(data[1]);
         var labs = flatten(data[1]);
 
         var byCodes = client.byCodes(labs, 'code');
@@ -77,7 +80,9 @@
         var lname = name.family;
 
 
-        var hscrp       = byCodes("30522-7");
+        // var hscrp       = byCodes("30522-7");
+        var hscrp = [{"resourceType":"Observation","id":"smart-Observation-66-lab","meta":{"versionId":"1","lastUpdated":"2021-04-21T02:32:30.803-04:00","tag":[{"system":"https://smarthealthit.org/tags","code":"smart-8-2017"}]},"text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"> 2013-01-16: CRP SerPl HS-mCnc = 3.8 mg/L </div>"},"status":"final","category":{"coding":[{"system":"http://hl7.org/fhir/observation-category","code":"laboratory","display":"Laboratory"}],"text":"Laboratory"},"code":{"coding":[{"system":"http://loinc.org","code":"30522-7","display":"CRP SerPl HS-mCnc"}],"text":"CRP SerPl HS-mCnc"},"subject":{"reference":"Patient/smart-1520204"},"effectiveDateTime":"2013-01-16","valueQuantity":{"value":3.8,"unit":"mg/L","system":"http://unitsofmeasure.org"},"referenceRange":[{"low":{"value":0,"unit":"mg/L","system":"http://unitsofmeasure.org","code":"mg/L"},"high":{"value":3,"unit":"mg/L","system":"http://unitsofmeasure.org","code":"mg/L"},"meaning":{"coding":[{"system":"http://hl7.org/fhir/referencerange-meaning","code":"normal","display":"Normal Range"}],"text":"Normal Range"}}]}];
+        // console.log(hscrp);
         var cholesterol = byCodes("14647-2", "2093-3");
         var hdl         = byCodes("2085-9");
         var systolic    = byCodes("8480-6");
