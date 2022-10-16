@@ -118,6 +118,7 @@ var redraw = function(){
 
 var draw_visualization = function() {
     var score = reynolds_risk_score(p);
+    console.log(score);
     p2 = $.extend(true, {}, p); // deep copy needed here
 
     compute_other_scores();
