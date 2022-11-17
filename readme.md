@@ -1,6 +1,6 @@
 # Notes #
 
-Modified slightly such that it works with R4 patients instead of (just?) DSTU2 by default. 
+Modified slightly such that it definitely works with R4 patients instead of default DSTU2.
 
 # Deploy #
 
