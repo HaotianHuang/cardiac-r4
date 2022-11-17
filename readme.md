@@ -1,6 +1,6 @@
 # Notes #
 
-Essentially no changes here just that it works with some patients from SMART App Launcher R4. 
+Modified slightly such that it works with R4 patients instead of (just?) DSTU2 by default. 
 
 # Deploy #
 
